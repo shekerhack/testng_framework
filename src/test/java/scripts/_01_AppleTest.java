@@ -1,25 +1,12 @@
 package scripts;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
-import utilities.Driver;
 
-public class _01_AppleTest {
+public class _01_AppleTest extends Base{
 
-    //Declare your driver
-    WebDriver driver;
-
-    // 1. Initial set up - before each test
-    @BeforeMethod
-    public void setup(){
-        driver = Driver.getDriver();
-    }
-
-    // 2. Validation of test - test
-    @Test
+    @Test(priority = 1, description = "TC345")
     public void testAppleTitle(){
         driver.get("https://www.apple.com/");
 
@@ -35,7 +22,7 @@ public class _01_AppleTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
-    @Test
+    @Test(priority = 2, description = "TC873")
     public void testAppleURL(){
         driver.get("https://www.apple.com/");
 
@@ -45,18 +32,14 @@ public class _01_AppleTest {
         Assert.assertEquals(actualURL, expectedURL);
     }
 
-    @Test
+
+    @Test(enabled = false, priority = 3, description = "TC092")
     public void X(){
         //fail() method is used to fail a test on purpose
         //We use this for known issues
         Assert.fail("Failure on purpose");
     }
 
-    // 3. Teardown actions - after each test
-    @AfterMethod
-    public void teardown(){
-        Driver.quitDriver();
-    }
 
 
 
