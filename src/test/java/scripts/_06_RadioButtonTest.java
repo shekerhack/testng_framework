@@ -31,7 +31,6 @@ public class _06_RadioButtonTest extends Base{
         faceBookPage.genderRadioButtons.get(0).click();
         Waiter.pause(2);
         Assert.assertTrue(faceBookPage.genderRadioButtons.get(0).isSelected());
-
         faceBookPage.genderRadioButtons.get(1).click();
         Waiter.pause(2);
         Assert.assertTrue(faceBookPage.genderRadioButtons.get(1).isSelected());
