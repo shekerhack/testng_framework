@@ -1,12 +1,11 @@
 package scripts;
 
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class _01_AppleTest extends Base{
 
-    @Test(priority = 1, description = "TC345")
+    @Test(priority = 1, description = "TC345", groups = "Functional")
     public void testAppleTitle(){
         driver.get("https://www.apple.com/");
 
